@@ -1,0 +1,48 @@
+/* Inline Edit: styles for the click-to-edit pill and the "+ add item" row. Colours follow the surrounding text (currentColor),
+   so it works on plain pages and on coloured callout cards alike. */
+
+.markdown-preview-view li.ie-editable:not(.ie-editing) { cursor: text; border-radius: 8px; }
+.markdown-preview-view li.ie-editable:not(.ie-editing):not(:has(li:hover)):hover {
+  background: color-mix(in srgb, currentColor 8%, transparent);
+}
+.markdown-preview-view li.ie-editable a,
+.markdown-preview-view li.ie-editable input { cursor: pointer; }
+
+.ie-editing > .ie-line-view { display: none; }
+
+.ie-editor {
+  display: inline-block;
+  min-width: 40%;
+  max-width: 100%;
+  padding: 0 8px;
+  margin: 0 -8px;
+  border-radius: 6px;
+  outline: none;
+  background: color-mix(in srgb, currentColor 14%, transparent);
+  box-shadow: inset 0 -2px 0 currentColor;
+  caret-color: currentColor;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.ie-add {
+  margin-top: 4px;
+  padding: 2px 0;
+  font-size: 0.9em;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.markdown-preview-view :hover > .ie-add,
+.ie-add:hover,
+.ie-add:focus-visible { opacity: 0.7; }
+.ie-add:hover { opacity: 1; }
+
+/* Touch screens have no hover. */
+@media (hover: none) { .ie-add { opacity: 0.6; } }
+
+/* Live Preview renders callouts through the same post-processors; editing there is Obsidian's own. */
+.markdown-source-view .ie-add { display: none; }
+
+@media (prefers-reduced-motion: reduce) { .ie-add { transition: none; } }

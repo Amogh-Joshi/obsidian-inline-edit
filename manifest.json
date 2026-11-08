@@ -1,0 +1,10 @@
+{
+  "id": "inline-edit",
+  "name": "Inline Edit",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Edit list and task text directly in reading view, so styled pages and colored callout cards keep their look. Enable it per page with a property.",
+  "author": "Amogh Joshi",
+  "authorUrl": "https://github.com/Amogh-Joshi",
+  "isDesktopOnly": false
+}
